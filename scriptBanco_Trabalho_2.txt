@@ -1,0 +1,78 @@
+create database trabalho;
+use trabalho;
+
+create table usuario(
+codUsuario integer primary key auto_increment,
+nome varchar(80),
+login varchar(20),
+senha varchar(32));
+
+create table departamento(
+codDepartamento integer primary key auto_increment,
+descricao varchar(100),
+usuario integer not null,
+foreign key (usuario) references usuario (codUsuario)
+);
+
+
+create table produto(
+codProduto integer primary key auto_increment,
+descricao varchar(100),
+precoCusto double,
+preco double,
+quantidade double,
+dataCadastro date,
+margemEstoque double,
+usuario integer not null,
+departamento integer not null,
+foreign key (usuario) references usuario (codUsuario),
+foreign key (departamento) references departamento (codDepartamento) 
+);
+
+create table fornecedor(
+codFornecedor integer primary key auto_increment,
+cnpj varchar(20),
+nome varchar(80),
+endereco varchar(80),
+usuario integer not null,
+foreign key (usuario) references usuario (codUsuario)
+);
+
+
+create table entrada(
+codEntrada integer primary key auto_increment,
+data date,
+produto integer not null,
+preco double,
+quantidade double,
+total double,
+usuario integer not null,
+fornecedor integer not null,
+foreign key (produto) references produto (codProduto),
+foreign key (fornecedor) references fornecedor (codFornecedor),
+foreign key (usuario) references usuario (codUsuario)
+);
+
+create table cliente(
+codCliente integer primary key auto_increment,
+cpf varchar(20),
+nome varchar(80),
+endereco varchar(80),
+dataAniversario date,
+usuario integer not null,
+foreign key (usuario) references usuario (codUsuario)
+);
+
+create table saida(
+codSaida integer primary key auto_increment,
+data date,
+produto integer not null,
+preco double,
+quantidade double,
+total double,
+usuario integer not null,
+cliente integer not null,
+foreign key (produto) references produto (codProduto),
+foreign key (cliente) references cliente (codCliente),
+foreign key (usuario) references usuario (codUsuario)
+);

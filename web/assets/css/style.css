@@ -1,0 +1,73 @@
+
+body {
+    display: block;
+    background-image: url(../img/dark_embroidery.png);
+    background-repeat: repeat;
+}
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+
+#login-form {
+    padding: 10px;
+    position: absolute;
+    min-width: 250px;
+    top: 50%;
+    left: 50%;      
+    margin:-140px 0 0 -180px;
+    background-color: #f5f5f5;
+    border: 2px solid #00143e;
+    border-radius: 2px;
+}
+
+#login-form h1 {
+    margin-left: 10px;
+}
+
+.content {
+    min-height: 800px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,1);
+ 
+}
+
+.table-header {
+    font-weight: bold;
+    color: white;
+    background-color: #000d29;
+}
+.box {
+    padding: 0px 15px 0px 0px;
+}
+.box-end {
+    padding: 0px 0px 0px 0px;
+}
+
+footer {
+    height: 130px;
+    width: 100%;
+    border-top: 10px solid #e04c00;
+    color: white;
+    font-family: sans-serif;
+}
+
+footer div {
+    margin: 0 auto;
+    width: 150px;
+    margin-top: 65px;
+}
+
+
+.titulo-pagina {
+    border-bottom: 2px solid black;
+}
+
+.form-sized {
+    max-width: 500px;
+}
+
+
+.margin-block {
+    margin-bottom: 20px;
+}
+
